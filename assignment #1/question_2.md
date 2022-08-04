@@ -1,4 +1,4 @@
-## Q1
+## Q2
  Please provide the sql to fetch homepage content. As the users and
 templates grow, the sql that's fetching the homepage content is very slow.
 How would you improve the sql query? (i.e. you may tune the query or adding

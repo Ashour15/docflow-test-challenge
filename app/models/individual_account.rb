@@ -1,0 +1,2 @@
+class IndividualAccount < Account
+end

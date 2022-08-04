@@ -65,12 +65,11 @@ ActiveRecord::Schema.define(version: 2022_08_04_000920) do
     t.integer "user_id", null: false
     t.text "body", null: false
     t.integer "parent_id"
-    t.string "commentable_type", null: false
-    t.integer "commentable_id", null: false
+    t.string "commentable_type"
+    t.integer "commentable_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["commentable_type", "commentable_id"], name: "index_comments_on_commentable"
-    t.index ["parent_id"], name: "index_comments_on_parent_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
@@ -94,6 +93,12 @@ ActiveRecord::Schema.define(version: 2022_08_04_000920) do
     t.index ["account_subscription_id"], name: "index_invoices_on_account_subscription_id"
   end
 
+  create_table "options_contents", force: :cascade do |t|
+    t.json "options", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "subscription_plans", force: :cascade do |t|
     t.string "name", null: false
     t.integer "max_users", null: false
@@ -107,8 +112,6 @@ ActiveRecord::Schema.define(version: 2022_08_04_000920) do
 
   create_table "template_sections", force: :cascade do |t|
     t.integer "template_id", null: false
-    t.string "content_type"
-    t.integer "content_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["template_id"], name: "index_template_sections_on_template_id"
@@ -141,4 +144,10 @@ ActiveRecord::Schema.define(version: 2022_08_04_000920) do
   add_foreign_key "account_users", "users"
   add_foreign_key "accounts", "users"
   add_foreign_key "attachments", "users"
+  add_foreign_key "comments", "users"
+  add_foreign_key "contents", "template_sections"
+  add_foreign_key "invoices", "account_subscriptions"
+  add_foreign_key "template_sections", "templates"
+  add_foreign_key "templates", "accounts"
+  add_foreign_key "templates", "users"
 end

@@ -1,24 +1,13 @@
-# README
+# Document management system
+ Document management is a system or process used to capture, track and store electronic documents such as PDFs, word processing files, digital images of paper-based content and text content .
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+## Environment
+- Ruby 3.0.0
+- Rails 6.1.48
+- sqlite3 1.4
+- Puma 5.0
 
-* Ruby version
+## To run the test suite of Organisation account pricing calculation
+`bundle exec rspec spec/services/subscription_plan_services/calculation_service.rb`
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...

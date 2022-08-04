@@ -8,6 +8,13 @@
 - sqlite3 1.4
 - Puma 5.0
 
+
 ## To run the test suite of Organisation account pricing calculation
 `bundle exec rspec spec/services/subscription_plan_services/calculation_service.rb`
+
+---
+
+## To check the answers of the first assignment
+
+[Assignment 1 answers](https://github.com/Ashour15/docflow-test-challenge/tree/main/assignment%20%231)
 
